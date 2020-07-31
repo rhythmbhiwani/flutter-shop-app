@@ -58,11 +58,11 @@ class AuthScreen extends StatelessWidget {
                         ],
                       ),
                       child: Text(
-                        'MyShop',
+                        'Rhythm\'s Shop',
                         style: TextStyle(
                           // ignore: deprecated_member_use
                           color: Theme.of(context).accentTextTheme.title.color,
-                          fontSize: 50,
+                          fontSize: 30,
                           fontFamily: 'Anton',
                           fontWeight: FontWeight.normal,
                         ),

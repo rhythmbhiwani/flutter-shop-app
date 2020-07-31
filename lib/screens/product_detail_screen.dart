@@ -20,7 +20,8 @@ class ProductDetailScreen extends StatelessWidget {
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 loadedProduct.title,
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(
+                    color: Colors.black, backgroundColor: Colors.amber),
               ),
               background: Hero(
                 tag: loadedProduct.id,
@@ -53,7 +54,7 @@ class ProductDetailScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 800,
+              height: 200,
             )
           ])),
         ],
