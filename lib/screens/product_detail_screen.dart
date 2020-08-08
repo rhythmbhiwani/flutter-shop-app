@@ -21,7 +21,7 @@ class ProductDetailScreen extends StatelessWidget {
               title: Text(
                 loadedProduct.title,
                 style: TextStyle(
-                    color: Colors.black, backgroundColor: Colors.amber),
+                    color: Colors.white, backgroundColor: Colors.purple),
               ),
               background: Hero(
                 tag: loadedProduct.id,

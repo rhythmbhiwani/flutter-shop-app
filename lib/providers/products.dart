@@ -28,7 +28,7 @@ class Products with ChangeNotifier {
     final filterString =
         filterByUser ? 'orderBy="creatorId"&equalTo="$userId"' : '';
     var url =
-        'https://flutter-shop-e51de.firebaseio.com/products.json?auth=$authToken&$filterString';
+        'https://amazing-shop-20769.firebaseio.com/products.json?auth=$authToken&$filterString';
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -36,7 +36,7 @@ class Products with ChangeNotifier {
         return;
       }
       url =
-          'https://flutter-shop-e51de.firebaseio.com/userFavorites/$userId.json?auth=$authToken';
+          'https://amazing-shop-20769.firebaseio.com/userFavorites/$userId.json?auth=$authToken';
       final favoriteResponse = await http.get(url);
       final favoriteData = json.decode(favoriteResponse.body);
       final List<Product> loadedProducts = [];
@@ -59,7 +59,7 @@ class Products with ChangeNotifier {
 
   Future<void> addProduct(Product product) async {
     final url =
-        'https://flutter-shop-e51de.firebaseio.com/products.json?auth=$authToken';
+        'https://amazing-shop-20769.firebaseio.com/products.json?auth=$authToken';
     try {
       final response = await http.post(url,
           body: json.encode({
@@ -78,6 +78,7 @@ class Products with ChangeNotifier {
       );
       _items.add(newProduct);
       notifyListeners();
+      fetechAndSetProducts(true);
     } catch (error) {
       throw error;
     }
@@ -87,7 +88,7 @@ class Products with ChangeNotifier {
     final prodIndex = _items.indexWhere((prod) => prod.id == id);
     if (prodIndex >= 0) {
       final url =
-          'https://flutter-shop-e51de.firebaseio.com/products/$id.json?auth=$authToken';
+          'https://amazing-shop-20769.firebaseio.com/products/$id.json?auth=$authToken';
       await http.patch(url,
           body: json.encode({
             'title': newProduct.title,
@@ -97,6 +98,7 @@ class Products with ChangeNotifier {
           }));
       _items[prodIndex] = newProduct;
       notifyListeners();
+      fetechAndSetProducts(true);
     } else {
       print("Error finding product");
     }
@@ -104,21 +106,20 @@ class Products with ChangeNotifier {
 
   Future<void> deleteProduct(String id) async {
     final url =
-        'https://flutter-shop-e51de.firebaseio.com/products/$id.json?auth=$authToken';
+        'https://amazing-shop-20769.firebaseio.com/products/$id.json?auth=$authToken';
     final existingProductIndex = _items.indexWhere((prod) => prod.id == id);
     var existingProduct = _items[existingProductIndex];
-    print(existingProduct);
     _items.remove(existingProductIndex);
     notifyListeners();
     final response = await http.delete(url);
     if (response.statusCode >= 400) {
       _items.insert(existingProductIndex, existingProduct);
       notifyListeners();
-      fetechAndSetProducts();
+      fetechAndSetProducts(true);
       throw HttpException("Some Error Occured");
     }
     existingProduct = null;
     notifyListeners();
-    fetechAndSetProducts();
+    fetechAndSetProducts(true);
   }
 }

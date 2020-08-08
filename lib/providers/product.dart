@@ -25,7 +25,7 @@ class Product with ChangeNotifier {
     isFavorite = !oldStatus;
     notifyListeners();
     final url =
-        'https://flutter-shop-e51de.firebaseio.com/userFavorites/$userId/$id.json?auth=$token';
+        'https://amazing-shop-20769.firebaseio.com/userFavorites/$userId/$id.json?auth=$token';
     final response = await http.put(url,
         body: json.encode(
           isFavorite,

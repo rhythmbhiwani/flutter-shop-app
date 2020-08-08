@@ -43,7 +43,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Rhythm\'s Shop'),
+        title: Text('Amazing Shop'),
         actions: <Widget>[
           Consumer<Cart>(
             builder: (_, cart, child) {

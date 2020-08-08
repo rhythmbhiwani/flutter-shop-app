@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:SHOP_APP/models/http_exception.dart';
+import '../models/http_exception.dart';
 
 import '../providers/auth.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +22,8 @@ class AuthScreen extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color.fromRGBO(215, 117, 255, 1).withOpacity(0.5),
-                  Color.fromRGBO(255, 188, 117, 1).withOpacity(0.9),
+                  Color.fromRGBO(67, 206, 162, 1).withOpacity(0.5),
+                  Color.fromRGBO(24, 90, 157, 1).withOpacity(0.9),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -48,7 +48,7 @@ class AuthScreen extends StatelessWidget {
                         ..translate(-10.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Colors.deepOrange.shade900,
+                        color: Colors.purple,
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 8,
@@ -58,10 +58,10 @@ class AuthScreen extends StatelessWidget {
                         ],
                       ),
                       child: Text(
-                        'Rhythm\'s Shop',
+                        'Amazing Shop',
                         style: TextStyle(
                           // ignore: deprecated_member_use
-                          color: Theme.of(context).accentTextTheme.title.color,
+                          color: Colors.white,
                           fontSize: 30,
                           fontFamily: 'Anton',
                           fontWeight: FontWeight.normal,
