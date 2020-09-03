@@ -1,7 +1,7 @@
 # Flutter Shot App
 
 ### Download
-Want to test the app, download from [here](https://github.com/rhythmbhiwani/flutter-shop-app/blob/master/apk/ShopApp.apk)
+Want to test the app, download from [here](https://raw.githubusercontent.com/rhythmbhiwani/flutter-shop-app/master/apks/ShopApp.apk)
 
 ## Screenshots
 #### Login Screen
