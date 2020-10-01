@@ -51,8 +51,8 @@ class MyApp extends StatelessWidget {
           builder: (ctx, authData, _) => MaterialApp(
             title: 'Amazing Shop',
             theme: ThemeData(
-              primarySwatch: Colors.purple,
-              accentColor: Colors.purpleAccent,
+              primarySwatch: Colors.cyan,
+              accentColor: Colors.cyanAccent,
               fontFamily: 'Lato',
               pageTransitionsTheme: PageTransitionsTheme(builders: {
                 TargetPlatform.android: CustomPageTransitionBuilder()
